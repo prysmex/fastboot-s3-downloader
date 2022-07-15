@@ -109,7 +109,7 @@ class S3Downloader {
 
 	installNPMDependencies() {
 		if (this.installDependencies) {
-			return this.exec(`cd ${this.outputPath} && npm install -s`)
+			return this.exec(`cd ${this.outputPath} && npm install --production -s`)
 				.then(() => this.ui.writeLine('installed npm dependencies'))
 				.catch(() => this.ui.writeError('unable to install npm dependencies'));
 		}
